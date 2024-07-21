@@ -17,8 +17,15 @@
 # and donuts(23) returns 'Number of donuts: many'
 
 def donuts(count):
-    # +++your code here+++
-    return
+    if count >= 10:
+        return "Number of donuts: many"
+    else:
+        return f"Number of donuts: {count}"
+
+
+print(donuts(5))   
+print(donuts(23))
+
 
 
 # B. both_ends
@@ -28,8 +35,11 @@ def donuts(count):
 # is less than 2, return instead the empty string.
 
 def both_ends(s):
-    # +++your code here+++
-    return
+    if len (s) < 2:
+        return ""
+    return s[:2] + s[-2:]
+print(both_ends("spring"))
+print(both_ends("hello"))
 
 
 # C. fix_start
@@ -43,8 +53,14 @@ def both_ends(s):
 # where all instances of stra have been replaced by strb.
 
 def fix_start(s):
-    # +++your code here+++
-    return
+    first_char = s[0]
+    modified_s = first_char + s[1:].replace(first_char, '*')
+    return modified_s
+print(fix_start("babble"))  
+print(fix_start("aardvark")) 
+print(fix_start("google"))  
+print(fix_start("donut"))  
+
 
 
 # D. MixUp
@@ -56,8 +72,15 @@ def fix_start(s):
 # Assume a and b are length 2 or more.
 
 def mix_up(a, b):
-    # +++your code here+++
-    return
+    new_a = b[:2] + a[2:]
+    new_b = a[:2] + b[2:]
+    return f"{new_a} {new_b}"
+
+
+print(mix_up('mix', 'pod'))    
+print(mix_up('dog', 'dinner')) 
+print(mix_up('gnome', 'fairy'))
+print(mix_up('hello', 'world'))
 
 
 # Provided simple test() function used in main() to print
